@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:plan_n_track/features/shared/widgets/tracking_app_bar.dart';
@@ -18,10 +20,64 @@ class TrackingView extends StatelessWidget {
               const SizedBox(
                 height: 24,
               ),
+              Card(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 12,
+                        horizontal: 20,
+                      ),
+                      child: Text(
+                        'Morning',
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      ),
+                    ),
+                    IconButton(
+                      onPressed: () {
+                        log('Add Morning');
+                      },
+                      icon: const Icon(Icons.add_circle_rounded),
+                    )
+                  ],
+                ),
+              ),
+              FoodCard(),
+              Card(),
               const CircularProgressIndicator(),
               Container()
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class FoodCard extends StatelessWidget {
+  const FoodCard({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: ListTile(
+        onTap: () {
+          log('Add Lunch');
+        },
+        trailing: const Icon(Icons.add_circle_rounded),
+        subtitle: Text(
+          'Get roughly 1000 kcal',
+          style: Theme.of(context).textTheme.labelMedium,
+        ),
+        title: Text(
+          'Lunch',
+          style: Theme.of(context)
+              .textTheme
+              .titleSmall!
+              .copyWith(fontWeight: FontWeight.bold),
         ),
       ),
     );
