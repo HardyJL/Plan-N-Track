@@ -43,8 +43,8 @@ class TrackingView extends StatelessWidget {
                   ],
                 ),
               ),
-              FoodCard(),
-              Card(),
+              const FoodCard(),
+              const Card(),
               const CircularProgressIndicator(),
               Container()
             ],
