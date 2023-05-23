@@ -3,6 +3,7 @@ import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter/widgets.dart';
+import 'package:plan_n_track/injection.dart';
 
 class AppBlocObserver extends BlocObserver {
   const AppBlocObserver();
@@ -25,6 +26,7 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
     log(details.exceptionAsString(), stackTrace: details.stack);
   };
 
+  await initializeDependencyInjection();
   Bloc.observer = const AppBlocObserver();
 
   await runZonedGuarded(
