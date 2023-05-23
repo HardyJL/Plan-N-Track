@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:plan_n_track/app.dart';
-import 'package:plan_n_track/features/tracking/tracking.view.dart';
+import 'package:plan_n_track/features/tracking/presentation/tracking_view.dart';
 
 void main() {
   group('App', () {

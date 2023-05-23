@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:plan_n_track/features/tracking/tracking.view.dart';
+import 'package:plan_n_track/features/login/presentation/login_view.dart';
 import 'package:plan_n_track/l10n/l10n.dart';
 
 class App extends StatelessWidget {
@@ -15,7 +15,7 @@ class App extends StatelessWidget {
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const TrackingView(),
+      home: const LoginView(),
     );
   }
 }
