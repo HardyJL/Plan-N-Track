@@ -4,7 +4,7 @@ version: 1.0.0+1
 publish_to: none
 
 environment:
-  sdk: ">=2.18.0 <3.0.0"
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   bloc: ^8.1.1
@@ -17,7 +17,8 @@ dependencies:
     sdk: flutter
   flutter_svg: ^2.0.5
   google_fonts: ^4.0.4
-  intl: ^0.17.0
+  intl: ^0.18.0
+  meta: ^1.9.1
 
 dev_dependencies:
   bloc_test: ^9.1.1

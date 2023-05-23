@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:plan_n_track/features/shared/widgets/tracking_app_bar.dart';
 import 'package:plan_n_track/features/tracking/data/food_api.dart';

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context).colorScheme;
     return Scaffold(
       body: Container(
         padding: const EdgeInsets.all(20),
@@ -13,14 +14,18 @@ class LoginView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            SvgPicture.asset(
-              'assets/images/weight.svg',
-              colorFilter: ColorFilter.mode(
-                Theme.of(context).colorScheme.primary,
-                BlendMode.srcIn,
+            Padding(
+              padding: const EdgeInsets.only(bottom: 8),
+              child: Text(
+                'Lapsus Calami',
+                textAlign: TextAlign.center,
+                style: GoogleFonts.pacifico(
+                  color: theme.primary,
+                  fontSize: 36,
+                ),
               ),
             ),
-            const SizedBox(height: 30),
+            const SizedBox(height: 70),
             TextFormField(
               decoration: const InputDecoration(
                 labelText: 'Email',
