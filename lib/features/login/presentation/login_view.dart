@@ -14,16 +14,31 @@ class LoginView extends StatefulWidget {
 class _LoginViewState extends State<LoginView> {
   late bool isRegister;
 
+  late TextEditingController passwordController;
+  late TextEditingController passwordConfirmationController;
+  late TextEditingController emailController;
+
   @override
   void initState() {
     isRegister = false;
+    passwordController = TextEditingController();
+    passwordConfirmationController = TextEditingController();
+    emailController = TextEditingController();
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    passwordController.dispose();
+    passwordConfirmationController.dispose();
+    emailController.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).colorScheme;
-    // final _logInRepository = GetIt.I.get<ILoginRepository>();
+    final logInRepository = GetIt.I.get<ILoginRepository>();
 
     return Scaffold(
       body: Container(
@@ -58,32 +73,59 @@ class _LoginViewState extends State<LoginView> {
             ),
             const SizedBox(height: 70),
             TextFormField(
+              autovalidateMode: AutovalidateMode.onUserInteraction,
+              controller: emailController,
               decoration: const InputDecoration(
                 labelText: 'Email',
                 prefixIcon: Icon(Icons.email),
               ),
+              validator: (value) => value != null && !value.contains('@')
+                  ? 'Please Enter a valid email address'
+                  : null,
             ),
             const SizedBox(height: 20),
             TextFormField(
+              autovalidateMode: AutovalidateMode.onUserInteraction,
+              controller: passwordController,
               decoration: const InputDecoration(
                 labelText: 'Password',
                 prefixIcon: Icon(Icons.lock),
               ),
               obscureText: true,
+              validator: (value) => value != null && value.length < 5
+                  ? 'Please Enter a longer password'
+                  : null,
             ),
             const SizedBox(height: 20),
             if (isRegister)
               TextFormField(
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+                controller: passwordConfirmationController,
                 decoration: const InputDecoration(
-                  labelText: 'Reenter Password',
+                  labelText: 'Confirm Password',
                   prefixIcon: Icon(Icons.lock),
                 ),
                 obscureText: true,
+                validator: (value) {
+                  return (value != null &&
+                          value.length < 5 &&
+                          value != passwordController.value.text)
+                      ? 'Please reenter the same password'
+                      : null;
+                },
               ),
             const SizedBox(height: 10),
             ElevatedButton(
               onPressed: () {
-                // _logInRepository.registerWithEmail('', '');
+                isRegister
+                    ? logInRepository.registerWithEmail(
+                        emailController.value.text,
+                        passwordController.value.text,
+                      )
+                    : logInRepository.login(
+                        emailController.value.text,
+                        passwordController.value.text,
+                      );
               },
               child: const Text('Sign In'),
             ),
