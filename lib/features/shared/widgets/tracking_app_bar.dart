@@ -25,7 +25,7 @@ class TrackingAppBar extends StatelessWidget implements PreferredSizeWidget {
           color: color,
         ),
         onPressed: () {
-          log('Menu pressed');
+          Scaffold.of(context).openDrawer();
         },
       ),
       actions: [

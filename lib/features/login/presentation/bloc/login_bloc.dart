@@ -22,10 +22,10 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   FutureOr<void> _onLoginPageInitialized(
     LoginPageInitialized event,
     Emitter<LoginState> emit,
-  ) {
+  ) async {
     emit(LoginLoading());
-    // do the magic
-    emit(LoginInitial());
+    final result = await loginRepository.tryLogin();
+    emit(result ? LoginSuccessfull() : LoginInitial());
   }
 
   FutureOr<void> _onLoginModeChanged(
