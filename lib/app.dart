@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:plan_n_track/features/login/presentation/login_view.dart';
 import 'package:plan_n_track/l10n/l10n.dart';
+import 'package:plan_n_track/router/router.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
@@ -15,7 +15,9 @@ class App extends StatelessWidget {
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const LoginView(),
+      routeInformationParser: router.routeInformationParser,
+      routeInformationProvider: router.routeInformationProvider,
+      routerDelegate: router.routerDelegate,
     );
   }
 }

@@ -6,8 +6,17 @@ import 'package:plan_n_track/features/login/domain/i_login_repository.dart';
 
 class LoginRepository implements ILoginRepository {
   @override
-  FutureOr<void> login(String email, String password) {
-    // TODO: implement login
+  FutureOr<bool> login(String email, String password) async {
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      return true;
+    } on FirebaseAuthException catch (ex) {
+      log(ex.message ?? 'An error ocurred');
+    }
+    return false;
   }
 
   @override
@@ -17,14 +26,16 @@ class LoginRepository implements ILoginRepository {
   }
 
   @override
-  FutureOr<void> registerWithEmail(String email, String password) async {
+  FutureOr<bool> registerWithEmail(String email, String password) async {
     try {
       await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
+      return true;
     } on FirebaseAuthException catch (ex) {
       log(ex.message ?? 'An error ocurred');
     }
+    return false;
   }
 }
