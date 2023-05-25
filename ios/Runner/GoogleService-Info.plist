@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1081752972552-d37tmb3c9ic04a208o6q0bon1fcvvg3r.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1081752972552-d37tmb3c9ic04a208o6q0bon1fcvvg3r</string>
+	<key>API_KEY</key>
+	<string>AIzaSyADpgprlX5S3o-izzSLj8YHXHQ0zgE7-v4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1081752972552</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.verygoodcore.plan-n-track</string>
+	<key>PROJECT_ID</key>
+	<string>plan-n-track-0</string>
+	<key>STORAGE_BUCKET</key>
+	<string>plan-n-track-0.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1081752972552:ios:4d691dc0d1762986af10bd</string>
+</dict>
+</plist>

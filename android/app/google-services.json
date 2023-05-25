@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1081752972552",
+    "project_id": "plan-n-track-0",
+    "storage_bucket": "plan-n-track-0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1081752972552:android:7b2fa874c42d2043af10bd",
+        "android_client_info": {
+          "package_name": "com.example.verygoodcore.plan_n_track"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1081752972552-92gdg3tbh2gih350ksb0vslb7mucjej2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHkzlrmdpSCiqePKLKiY2fUdp99UVi8bw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1081752972552-92gdg3tbh2gih350ksb0vslb7mucjej2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1081752972552-d37tmb3c9ic04a208o6q0bon1fcvvg3r.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.verygoodcore.plan-n-track"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
